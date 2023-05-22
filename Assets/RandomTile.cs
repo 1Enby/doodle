@@ -6,6 +6,7 @@ public enum TileType
     {
         Grass,
         Sand,
+        Tree,
         Rock
     }
     [ExecuteAlways]
@@ -54,6 +55,17 @@ public class RandomTile : MonoBehaviour
                 }
         }
 
+        for(int i = transform.childCount; i>0;i--)
+        {
+            var child = transform.GetChild(0);
+            if(transform.GetChild(0).name.Contains("Grass"))
+                {
+                    object_pool = GameObject.Find("ObjectPools").transform.Find("Grass");
+                    child.parent = object_pool;
+                    child.localPosition = new Vector3(0,0,0);
+                }
+        }
+
 
       
 
@@ -70,6 +82,10 @@ public class RandomTile : MonoBehaviour
                 break;
             case TileType.Sand:
                 object_pool = GameObject.Find("ObjectPools").transform.Find("Sand");
+                tile_prefab = object_pool.GetChild(0);
+                break;
+            case TileType.Grass:
+                object_pool = GameObject.Find("ObjectPools").transform.Find("Grass");
                 tile_prefab = object_pool.GetChild(0);
                 break;
             

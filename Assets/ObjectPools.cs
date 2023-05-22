@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 [ExecuteAlways]
 public class ObjectPools : MonoBehaviour
@@ -33,7 +34,7 @@ public class ObjectPools : MonoBehaviour
         {
             //copy child if none left
             var go = transform.GetChild(0).gameObject;
-            GameObject tmp = Instantiate(go, transform)as GameObject;
+            GameObject tmp = PrefabUtility.InstantiatePrefab(go, transform)as GameObject;
             
             for(int i =0;i<50;i++)
                 tmp.transform.localPosition = new Vector3(0,0,0);

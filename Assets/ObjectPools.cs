@@ -6,39 +6,31 @@ using UnityEditor;
 [ExecuteAlways]
 public class ObjectPools : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(transform.childCount<2)
-        {
-            //copy child if none left
-            var go = transform.GetChild(0).gameObject;
-            GameObject tmp = Instantiate(go, transform)as GameObject;
-            
-            for(int i =0;i<50;i++)
-                tmp.transform.localPosition = new Vector3(0,0,0);
-        }
-
-    }
-
+   
+    [SerializeField] 
+    GameObject prefab;
     void Remove()
     {
-       Debug.Log("hola");
-       if(transform.childCount<2)
+       
+       GameObject tmp;
+       Vector3 origin = new Vector3(0,0,0);
+       
+       if(transform.childCount<1)
         {
-            //copy child if none left
-            var go = transform.GetChild(0).gameObject;
-            GameObject tmp = PrefabUtility.InstantiatePrefab(go, transform)as GameObject;
-            
-            for(int i =0;i<50;i++)
-                tmp.transform.localPosition = new Vector3(0,0,0);
+            tmp = PrefabUtility.InstantiatePrefab(prefab, transform)as GameObject; 
         }
 
+        /*
+        var go = transform.GetChild(0).gameObject;
+
+        go.name = gameObject.name.Split("Pool")[0];
+
+        if (tmp == null)
+            Debug.LogWarning("Issue with tile instantiating");
+
+        go.transform.localPosition = origin;
+        */
     }
+
+
 }

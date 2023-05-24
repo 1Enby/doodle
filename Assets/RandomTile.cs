@@ -20,52 +20,9 @@ public class RandomTile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         Transform object_pool = null;
-        for(int i = transform.childCount; i>0;i--)
-        {
-            var child = transform.GetChild(0);
-            if(transform.GetChild(0).name.Contains("Grass"))
-                {
-                    object_pool = GameObject.Find("ObjectPools").transform.Find("Grass");
-                    child.parent = object_pool;
-                    child.localPosition = new Vector3(0,0,0);
-                }
-        }
-
-        for(int i = transform.childCount; i>0;i--)
-        {
-            var child = transform.GetChild(0);
-            if(transform.GetChild(0).name.Contains("Rock"))
-                {
-                    object_pool = GameObject.Find("ObjectPools").transform.Find("Rock");
-                    child.parent = object_pool;
-                    child.localPosition = new Vector3(0,0,0);
-                }
-        }
-
-        for(int i = transform.childCount; i>0;i--)
-        {
-            var child = transform.GetChild(0);
-            if(transform.GetChild(0).name.Contains("Sand"))
-                {
-                    object_pool = GameObject.Find("ObjectPools").transform.Find("Sand");
-                    child.parent = object_pool;
-                    child.localPosition = new Vector3(0,0,0);
-                }
-        }
-
-        for(int i = transform.childCount; i>0;i--)
-        {
-            var child = transform.GetChild(0);
-            if(transform.GetChild(0).name.Contains("Tree"))
-                {
-                    object_pool = GameObject.Find("ObjectPools").transform.Find("Tree");
-                    child.parent = object_pool;
-                    child.localPosition = new Vector3(0,0,0);
-                }
-        }
-    
+      
+        
         switch (type)
         {
             case TileType.Grass:
@@ -94,8 +51,34 @@ public class RandomTile : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Reset(){
+        Transform object_pool = null;
+  for(int i = transform.childCount; i>0;i--)
+        {
+            var child = transform.GetChild(0);
+            if(transform.GetChild(0).name.Contains("Grass"))
+                {
+                    object_pool = GameObject.Find("ObjectPools").transform.Find("Grass");
+
+                }
+                 if(transform.GetChild(0).name.Contains("Rock"))
+                {
+                    object_pool = GameObject.Find("ObjectPools").transform.Find("Rock");
+
+                }
+                  if(transform.GetChild(0).name.Contains("Sand"))
+                {
+                    object_pool = GameObject.Find("ObjectPools").transform.Find("Sand");
+
+                }
+                 if(transform.GetChild(0).name.Contains("Tree"))
+                {
+                    object_pool = GameObject.Find("ObjectPools").transform.Find("Tree");
+
+                }
+                    child.parent = object_pool;
+                    child.localPosition = new Vector3(0,0,0);
+        }
     }
 }
+

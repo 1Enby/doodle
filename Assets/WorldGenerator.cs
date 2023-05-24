@@ -6,13 +6,25 @@ public class WorldGenerator : MonoBehaviour
 {
     // Start is called before the first frame update
    
+
+    [SerializeField]
+    int cols = 5;
+    [SerializeField]
+    int rows = 5;
+
+    [SerializeField]
+    int tWidth = 1;
+    [SerializeField]
+    int tLength = 1;
+
    void Start()
     {
         Transform tile_pool = GameObject.Find("TilePool").transform;
+        RemoveAll();
 
-        for(int x = 0;x<10;x++)
+        for(int x = 0;x<rows;x++)
         {
-            for(int y = 0;y<10;y++)
+            for(int y = 0;y<cols;y++)
             {
                 tile_pool.SendMessage("Remove");
                 var new_tile = tile_pool.GetChild(0);
@@ -41,10 +53,18 @@ public class WorldGenerator : MonoBehaviour
             }
         }
     }
+void RemoveAll()
+{
+    Transform tile_pool = GameObject.Find("TilePool").transform;
 
-    // Update is called once per frame
-    void Update()
-    {
+    for(int i =transform.childCount; i >0; i--){
+        var origin = new Vector3(0,0,0);
+        var child = transform.GetChild(0);
+            child.parent = tile_pool;
+            child.localPosition = origin;
+            child.GetComponent<RandomTile>().SendMessage("Reset");
         
-    }
 }
+}
+}
+

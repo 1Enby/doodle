@@ -103,6 +103,8 @@ public class WorldGenerator : MonoBehaviour
         var new_tile = tile_pool.GetChild(0);
         new_tile.parent = transform;
 
+        if(new_tile==null)
+            return;
 
         new_tile.localPosition = new Vector3(
         StaticMap.the_world_map[world_tile].x_pos,

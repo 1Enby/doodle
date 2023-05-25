@@ -1,26 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float speed = 2f;
+    public float moveSpeed = 5f;
+    public float turnSpeed = 100f;
+    public float jumpForce = 5f;
 
-    private Vector3 movement;
+    private Rigidbody rb;
+    private bool isJumping = false;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true; // Freeze rotation to prevent unwanted physics behavior
     }
 
-    void FixedUpdate()
+    private void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        movement = new Vector3(horizontal, 0f, vertical).normalized;
+        // Character movement
+        float moveInput = Input.GetAxis("Vertical");
+        float turnInput = Input.GetAxis("Horizontal");
 
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        Vector3 movement = transform.forward * moveInput * moveSpeed * Time.deltaTime;
+        Quaternion turnRotation = Quaternion.Euler(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
+
+        rb.MovePosition(rb.position + movement);
+        rb.MoveRotation(rb.rotation * turnRotation);
+
+        // Character jumping
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isJumping = true;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isJumping = false;
+        }
     }
 }

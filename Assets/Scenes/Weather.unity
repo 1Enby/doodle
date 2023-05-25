@@ -449,6 +449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1083737831}
+  - component: {fileID: 1083737832}
   m_Layer: 0
   m_Name: WeatherChanger
   m_TagString: Untagged
@@ -469,9 +470,105 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1601661393}
+  - {fileID: 1215845679}
   m_Father: {fileID: 635323215}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1083737832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083737830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3e68ef787fd4cfabd31e0678a73d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weatherNum: 0
+  timeNum: 0
+  Rain: {fileID: 0}
+--- !u!1001 &1215845678
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1083737831}
+    m_Modifications:
+    - target: {fileID: 9142851681422796139, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142851681422796139, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142851681422796139, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142851681422796139, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142851681422796139, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142851681422796139, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142851681422796139, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142851681422796139, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142851681422796139, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142851681422796139, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142851681422796139, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142851681422796150, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+        type: 3}
+      propertyPath: m_Name
+      value: SnowParticleSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142851681422796150, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d308a427d37b4a6891aabc172d8c5d8, type: 3}
+--- !u!4 &1215845679 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9142851681422796139, guid: 5d308a427d37b4a6891aabc172d8c5d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1215845678}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1301218580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -538,6 +635,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RainParticleSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 9142851681422796150, guid: efb2dea7adf5942caa45c87b4029d6f8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efb2dea7adf5942caa45c87b4029d6f8, type: 3}

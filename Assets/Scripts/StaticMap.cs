@@ -50,8 +50,8 @@ public class StaticMap
             int neighbor = val + sub;
             l[x] = neighbor;
             // cannot be a neighbor with yourself
-            if (neighbor == val)
-                l[x] = -100;
+           // if (neighbor == val)
+           //     l[x] = -100;
 
             // cannot have a negative bound
             if (neighbor < 0)

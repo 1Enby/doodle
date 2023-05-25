@@ -42,6 +42,10 @@ public class RandomTile : MonoBehaviour
             return;
 
         object_pool.SendMessage("Remove");
+
+        if(object_pool.childCount<1)
+            return;
+            
         tile_prefab = object_pool.GetChild(0);
 
         //reparent tile prefab to tile object

@@ -41,7 +41,7 @@ public class WorldGenerator : MonoBehaviour
         {
             for (int y = 0; y < cols; y++)
             {
-                var height = Random.Range(0.0f, 1.0f);
+                var height = 0; // var height = Random.Range(0.0f, 1.0f);
                 Vector3 grid_pos = new Vector3(x, height, y);
                 var rand_type = (TileType)Random.Range(0, 4);
 

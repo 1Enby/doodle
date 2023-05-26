@@ -34,7 +34,7 @@ public class StaticMap
     public static int height;
 
     public static int rad;
-    public static void Init(int w, int h, int radius)
+    public static void Int(int w, int h, int radius)
     {
         var max_map_size = w * h;
         the_world_map = new map_point[max_map_size];

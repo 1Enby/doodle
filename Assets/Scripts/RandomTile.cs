@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
+
 public enum TileType
 {
     Grass,
@@ -10,10 +10,14 @@ public enum TileType
     Tree,
     Rock
 }
+
 [ExecuteAlways]
+
 
 public class RandomTile : MonoBehaviour
 {
+    
+    
     public TileType type = TileType.Grass;
 
     public Transform tile_prefab;
@@ -81,7 +85,9 @@ public class RandomTile : MonoBehaviour
             child.localPosition = new Vector3(0, 0, 0);
         }
     }
+
+
 }
 
-*/
+
 

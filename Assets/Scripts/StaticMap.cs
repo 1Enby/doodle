@@ -4,6 +4,7 @@ using UnityEngine;
 
 public struct map_point
 {
+    
     public TileType type;
     public float x_pos;
     public float y_pos;
@@ -76,6 +77,8 @@ public class StaticMap
         return l;
     }
 }
+
+
 
 
 

@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Tile
+  - Grass
+  - Water
+  - Rock
+  - Sand
+  - Tree
   layers:
   - Default
   - TransparentFX

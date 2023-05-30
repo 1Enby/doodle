@@ -52,8 +52,21 @@ public class WorldGenerator : MonoBehaviour
     {
         if (!GenerationComplete)
         {
-            StaticMap.Init(tile_countX, tile_countY, radius);
-            StartCoroutine("GenerateWorld");
+            for (int y = 0; y < tile_countY; y++)
+            {
+                //set a random height and a position based on the x and y variables.
+                //and the other generated properties of the tile!
+                var height = Random.Range(0.0f, 1.0f);
+                Vector3 grid_pos = new Vector3(x, height, y);
+                var rand_type = (TileType)Random.Range(0, 4); //select the tile type randomly, it's just a number between 0 and 2
+
+                //map_point point = StaticMap.the_world_map[i];
+
+                //###############//
+                var index = (tile_countY * x) + y;
+                StaticMap.the_world_map[index] = new map_point(rand_type, grid_pos.x, grid_pos.y, grid_pos.z);
+                //##############//
+            }
         }
     }
 

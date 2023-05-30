@@ -6,8 +6,12 @@ public class ThirdPersonMovement : MonoBehaviour
     public float turnSpeed = 100f;
     public float jumpForce = 5f;
 
+    public float waterjumpForce = 1f;
+
     private Rigidbody rb;
     private bool isJumping = false;
+
+
 
     private void Start()
     {
@@ -16,6 +20,21 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void Update()
     {
+
+        if (transform.position.y <= -10)
+        {
+            transform.position = new Vector3(0, 0, 0);
+        }
+    
+        if (transform.position.y >= 10)
+        {
+            transform.position = new Vector3(transform.position.x, 3, transform.position.z);
+            isJumping = true;
+        }
+
+
+
+
         // Character movement
         float moveInput = Input.GetAxis("Vertical");
         float turnInput = Input.GetAxis("Horizontal");
@@ -27,22 +46,38 @@ public class ThirdPersonMovement : MonoBehaviour
         rb.MoveRotation(rb.rotation * turnRotation);
 
         // Character jumping
+
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isJumping = true;
+            if (jumpForce == waterjumpForce)
+            {
+                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+            }
+            else
+            {
+                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                isJumping = true;
+            }
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground") ||
-        collision.gameObject.CompareTag("Rock") ||
-        collision.gameObject.CompareTag("Tree") ||
-        collision.gameObject.CompareTag("Water") ||
-        collision.gameObject.CompareTag("Grass")   )
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            jumpForce = 5f;
+        }
+
+        if (collision.gameObject.CompareTag("Water"))
+        {
+            jumpForce = waterjumpForce;
+        }
+        else
         {
             isJumping = false;
         }
     }
+
 }
+

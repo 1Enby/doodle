@@ -57,7 +57,7 @@ public class WorldGenerator : MonoBehaviour
         }
     }
 
-    bool water_pass = false;
+    //bool water_pass = false;
     int[] n;
     int last_tile;
 

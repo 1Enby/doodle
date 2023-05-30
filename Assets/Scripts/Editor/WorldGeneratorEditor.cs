@@ -17,6 +17,10 @@ public class WorldGeneratorEditor : Editor
     SerializedProperty radius;
 
     SerializedProperty debug_text;
+    SerializedProperty num_mountains;
+
+    SerializedProperty max_mountain_radius;
+
 
     void OnEnable()
     {
@@ -28,6 +32,8 @@ public class WorldGeneratorEditor : Editor
         player = serializedObject.FindProperty("player");
         radius = serializedObject.FindProperty("radius");
         debug_text = serializedObject.FindProperty("debug_text");
+        num_mountains = serializedObject.FindProperty("num_mountains");
+        max_mountain_radius = serializedObject.FindProperty("max_mountain_radius");
 
     }
 
@@ -41,6 +47,8 @@ public class WorldGeneratorEditor : Editor
         EditorGUILayout.PropertyField(max_lake_radius);
         EditorGUILayout.PropertyField(player);
         EditorGUILayout.PropertyField(radius);
+        EditorGUILayout.PropertyField(num_mountains);
+        EditorGUILayout.PropertyField(max_mountain_radius);
 
 
         serializedObject.ApplyModifiedProperties();

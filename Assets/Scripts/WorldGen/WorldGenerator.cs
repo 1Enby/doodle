@@ -36,7 +36,6 @@ public class WorldGenerator : MonoBehaviour
 
     [SerializeField]
     int num_mountains;
-
     [Range(0, 20)]
    
     [SerializeField]
@@ -208,7 +207,19 @@ public class WorldGenerator : MonoBehaviour
             {
                 if (n[i] != -100)
                 {
+                    StaticMap.the_world_map[n[i]].y_pos = 0.2f;
                     StaticMap.the_world_map[n[i]].t_type = TileType.Rock;
+                }
+
+            }
+
+            int[] o = StaticMap.GetNeighborsAtRadius(index, (int)mountain_size + Random.Range(1, 2), StaticMap.width, StaticMap.height);
+            for (int i = 0; i < o.Length; i++)
+            {
+                if (o[i] != -100)
+                {
+                    StaticMap.the_world_map[o[i]].y_pos = 0.4f;
+                    StaticMap.the_world_map[o[i]].t_type = TileType.Rock;
                 }
 
             }
@@ -218,7 +229,7 @@ public class WorldGenerator : MonoBehaviour
             {
                 if (n[i] != -100)
                 {
-                    StaticMap.the_world_map[n[i]].y_pos = 0.2f;
+                    StaticMap.the_world_map[n[i]].y_pos = 0.6f;
                     StaticMap.the_world_map[n[i]].t_type = TileType.Rock;
                 }
             }

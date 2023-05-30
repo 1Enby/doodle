@@ -3445,12 +3445,12 @@ MonoBehaviour:
   tile_countX: 500
   tile_countY: 500
   num_lakes: 74
-  num_mountains: 0
-  min_mountain_radius: 0
-  max_mountain_radius: 0
   min_lake_radius: 1
   max_lake_radius: 10
   radius: 6
+  num_mountains: 100
+  min_mountain_radius: 0
+  max_mountain_radius: 4.9
 --- !u!4 &1026105732
 Transform:
   m_ObjectHideFlags: 0

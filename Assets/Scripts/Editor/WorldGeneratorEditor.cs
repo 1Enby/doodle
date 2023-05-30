@@ -41,7 +41,6 @@ public class WorldGeneratorEditor : Editor
         EditorGUILayout.PropertyField(max_lake_radius);
         EditorGUILayout.PropertyField(player);
         EditorGUILayout.PropertyField(radius);
-        EditorGUILayout.PropertyField(debug_text);
 
 
         serializedObject.ApplyModifiedProperties();

@@ -5,6 +5,7 @@ public class DayandNight : MonoBehaviour
 {
     Vector3 rot=Vector3.zero;
     
+    [SerializeField]
     float degpersec=6;
 
     // Update is called once per frame

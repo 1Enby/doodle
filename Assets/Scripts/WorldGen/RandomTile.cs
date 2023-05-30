@@ -6,11 +6,11 @@ using UnityEngine;
 public enum TileType
 {
     Grass,
-    Water,
     Rock,
-    Tree
+    Tree,
+    Water,
+    Sand
 }
-
 
 public class RandomTile : MonoBehaviour
 {
@@ -43,9 +43,8 @@ public class RandomTile : MonoBehaviour
             return;
 
         ResetNext = StaticMap.relationship_array[index] == 0;
-
-
     }
+
     void Reset()
     {
         //send child objects back to the object pool they belong in.
@@ -53,9 +52,9 @@ public class RandomTile : MonoBehaviour
         {
             var child = transform.GetChild(0);
 
-            if (child.name.Contains("Water"))
+            if (child.name.Contains("Tree"))
             {
-                object_pool = GameObject.Find("ObjectPools").transform.Find("WaterTiles");
+                object_pool = GameObject.Find("ObjectPools").transform.Find("TreeTiles");
 
             }
             if (child.name.Contains("Rock"))
@@ -68,10 +67,15 @@ public class RandomTile : MonoBehaviour
                 object_pool = GameObject.Find("ObjectPools").transform.Find("GrassTiles");
 
             }
-            if (child.name.Contains("Tree"))
+            if (child.name.Contains("Water"))
             {
-                object_pool = GameObject.Find("ObjectPools").transform.Find("TreeTiles");
+                object_pool = GameObject.Find("ObjectPools").transform.Find("WaterTiles");
 
+            }
+
+            if (child.name.Contains("Sand"))
+            {
+                object_pool = GameObject.Find("ObjectPools").transform.Find("SandTiles");
             }
             child.SetParent(object_pool, false);
             //child.localPosition = new Vector3(0, 0, 0);
@@ -103,6 +107,9 @@ public class RandomTile : MonoBehaviour
             case TileType.Tree:
                 object_pool = GameObject.Find("ObjectPools").transform.Find("TreeTiles");
                 break;
+            case TileType.Sand:
+                object_pool = GameObject.Find("ObjectPools").transform.Find("SandTiles");
+                break;
         }
 
         if (object_pool == null)
@@ -128,3 +135,4 @@ public class RandomTile : MonoBehaviour
             Reset();
     }
 }
+

@@ -6,7 +6,7 @@ using TMPro;
 
 public struct map_point
 {
-    public TileType type;
+    public TileType t_type;
     public float x_pos;
     public float y_pos;
     public float z_pos;
@@ -15,7 +15,7 @@ public struct map_point
 
     public map_point(TileType t, float x, float y, float z)
     {
-        type = t;
+        t_type = t;
         x_pos = x;
         y_pos = y;
         z_pos = z;
@@ -34,7 +34,7 @@ public class StaticMap
     public static int height;
 
     public static int rad;
-    public static void Int(int w, int h, int radius)
+    public static void Init(int w, int h, int radius)
     {
         var max_map_size = w * h;
         the_world_map = new map_point[max_map_size];
@@ -113,25 +113,7 @@ public class StaticMap
         return l;
     }
 
-    public static void ResetNeighbors()
-    {
-        if (relationship_array == null)
-            return;
 
-        //clear the relationship array with 0s
-        for (int i = 0; i < relationship_array.Length; i++)
-        {
-            relationship_array[i] = 0;//
-        }
-        //go through the relationship array and set the index of each neighbor to 1
-        for (int i = 0; i < current_neighbors.Length; i += 1)
-        {
-            if (current_neighbors[i] >= 0)
-            {
-                relationship_array[current_neighbors[i]] = 1;
-            }
-        }
-    }
 }
 
 

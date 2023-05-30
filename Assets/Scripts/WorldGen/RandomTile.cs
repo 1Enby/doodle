@@ -6,8 +6,8 @@ using UnityEngine;
 public enum TileType
 {
     Grass,
-    Rock,
     Tree,
+    Rock,
     Water,
     Sand
 }

@@ -3444,7 +3444,10 @@ MonoBehaviour:
   player: {fileID: 162126404}
   tile_countX: 500
   tile_countY: 500
-  num_lakes: 9
+  num_lakes: 74
+  num_mountains: 0
+  min_mountain_radius: 0
+  max_mountain_radius: 0
   min_lake_radius: 1
   max_lake_radius: 10
   radius: 6

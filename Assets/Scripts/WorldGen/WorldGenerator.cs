@@ -18,10 +18,9 @@ public class WorldGenerator : MonoBehaviour
     Vector3 ray;
 
     [Range(0, 100)]
+   
     [SerializeField]
     int num_lakes;
-
-    [Range(0, 20)]
     [SerializeField]
     float min_lake_radius;
     [Range(0, 20)]
@@ -34,6 +33,18 @@ public class WorldGenerator : MonoBehaviour
     Transform tile_pool;
 
     static bool GenerationComplete = false;
+
+    [SerializeField]
+    int num_mountains;
+
+    [Range(0, 20)]
+   
+    [SerializeField]
+    float min_mountain_radius;
+    [Range(0, 20)]
+    [SerializeField]
+    float max_mountain_radius;
+
 
 
     // Start is called before the first frame update
@@ -148,7 +159,7 @@ public class WorldGenerator : MonoBehaviour
                 //and the other generated properties of the tile!
                 var height = Random.Range(0.0f, 0.0f);
                 Vector3 grid_pos = new Vector3(x, height, y);
-                var rand_type = (TileType)Random.Range(0, 2); //select the tile type randomly, it's just a number between 0 and 2
+                var rand_type = (TileType)Random.Range(0, 1); //select the tile type randomly, it's just a number between 0 and 2
                 var index = (tile_countY * x) + y;
 
                 StaticMap.the_world_map[index] = new map_point(rand_type, grid_pos.x, grid_pos.y, grid_pos.z);
@@ -181,6 +192,34 @@ public class WorldGenerator : MonoBehaviour
                 {
                     StaticMap.the_world_map[n[i]].y_pos = -0.1f;
                     StaticMap.the_world_map[n[i]].t_type = TileType.Water;
+                }
+            }
+        }
+
+        for (int l = 0; l < num_mountains; l++)
+        {
+            //pick a random point in the map
+            int index = Random.Range(0, StaticMap.the_world_map.Length);
+
+            float mountain_size = Random.Range(min_mountain_radius, max_mountain_radius);
+
+            int[] n = StaticMap.GetNeighborsAtRadius(index, (int)mountain_size + Random.Range(1, 5), StaticMap.width, StaticMap.height);
+            for (int i = 0; i < n.Length; i++)
+            {
+                if (n[i] != -100)
+                {
+                    StaticMap.the_world_map[n[i]].t_type = TileType.Rock;
+                }
+
+            }
+
+            n = StaticMap.GetNeighborsAtRadius(index, (int)mountain_size, StaticMap.width, StaticMap.height);
+            for (int i = 0; i < n.Length; i++)
+            {
+                if (n[i] != -100)
+                {
+                    StaticMap.the_world_map[n[i]].y_pos = 0.2f;
+                    StaticMap.the_world_map[n[i]].t_type = TileType.Rock;
                 }
             }
         }

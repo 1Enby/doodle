@@ -4,7 +4,9 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float turnSpeed = 100f;
-    public float jumpForce = 5f;
+    public float jumpingForce = 5f;
+
+    float jumpForce = 5f;
 
     public float waterjumpForce = 1f;
 
@@ -66,12 +68,13 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            jumpForce = 5f;
+            jumpForce = jumpingForce;
         }
 
         if (collision.gameObject.CompareTag("Water"))
         {
             jumpForce = waterjumpForce;
+            isJumping = false;
         }
         else
         {

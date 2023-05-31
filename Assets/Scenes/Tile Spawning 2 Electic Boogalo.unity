@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06788178, g: 0.10543225, b: 0.11922799, a: 1}
+  m_IndirectSpecularColor: {r: 0.06788187, g: 0.105432235, b: 0.11922799, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2665,7 +2665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &799286518
 Transform:
   m_ObjectHideFlags: 0
@@ -2874,7 +2874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &862847819
 Transform:
   m_ObjectHideFlags: 0
@@ -3850,6 +3850,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 162126409, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
+      propertyPath: jumpForce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 162126409, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
+      propertyPath: waterjumpForce
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
       propertyPath: m_ClearFlags
       value: 1
@@ -4328,6 +4336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4176dd60c0804da45845aa3860517538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theWeather: {fileID: 1593184175}
 --- !u!114 &1132644563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4343,6 +4352,7 @@ MonoBehaviour:
   weatherNum: 0
   timeNum: 0
   Rain: {fileID: 0}
+  currentWeather: 0
 --- !u!4 &1132644564
 Transform:
   m_ObjectHideFlags: 0
@@ -5815,6 +5825,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 335126692bc294098b5b8b8daed06830, type: 3}
+--- !u!114 &1593184175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1083737832, guid: 8041113e72d91402abc1b1da11035a94,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056789236}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3e68ef787fd4cfabd31e0678a73d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1625119599
 PrefabInstance:
   m_ObjectHideFlags: 0

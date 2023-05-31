@@ -17,7 +17,7 @@ public class WorldGenerator : MonoBehaviour
     Vector3 origin;
     Vector3 ray;
 
-    [Range(0, 100)]
+    [Range(0, 1000)]
    
     [SerializeField]
     int num_lakes;

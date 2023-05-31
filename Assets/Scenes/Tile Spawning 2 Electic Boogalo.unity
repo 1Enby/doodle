@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06788178, g: 0.10543225, b: 0.11922799, a: 1}
+  m_IndirectSpecularColor: {r: 0.06788187, g: 0.105432235, b: 0.11922799, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2665,7 +2665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &799286518
 Transform:
   m_ObjectHideFlags: 0
@@ -2691,7 +2691,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b3bd805af7e1f9f4a9d25dd2bd185bb1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c9d921781474d5b40affba9a6f606529, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2874,7 +2874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &862847819
 Transform:
   m_ObjectHideFlags: 0
@@ -3700,7 +3700,7 @@ MonoBehaviour:
   player: {fileID: 162126404}
   tile_countX: 500
   tile_countY: 500
-  num_lakes: 74
+  num_lakes: 1000
   min_lake_radius: 1
   max_lake_radius: 10
   radius: 6
@@ -3850,6 +3850,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 162126409, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
+      propertyPath: jumpForce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 162126409, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
+      propertyPath: jumpingForce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 162126409, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
+      propertyPath: waterjumpForce
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
       propertyPath: m_ClearFlags
       value: 1
@@ -4307,6 +4319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1132644564}
+  - component: {fileID: 1132644563}
   - component: {fileID: 1132644562}
   m_Layer: 0
   m_Name: Songs
@@ -4327,7 +4340,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4176dd60c0804da45845aa3860517538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theWeather: {fileID: 1154952781}
+  theWeather: {fileID: 1593184175}
+--- !u!114 &1132644563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132644561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3e68ef787fd4cfabd31e0678a73d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weatherNum: 0
+  timeNum: 0
+  Rain: {fileID: 0}
+  currentWeather: 0
 --- !u!4 &1132644564
 Transform:
   m_ObjectHideFlags: 0
@@ -4351,18 +4380,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1327179554}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1154952781 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1083737832, guid: 8041113e72d91402abc1b1da11035a94,
-    type: 3}
-  m_PrefabInstance: {fileID: 1056789236}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f3e68ef787fd4cfabd31e0678a73d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1162249804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5812,6 +5829,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 335126692bc294098b5b8b8daed06830, type: 3}
+--- !u!114 &1593184175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1083737832, guid: 8041113e72d91402abc1b1da11035a94,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056789236}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3e68ef787fd4cfabd31e0678a73d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1625119599
 PrefabInstance:
   m_ObjectHideFlags: 0

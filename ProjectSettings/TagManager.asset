@@ -11,6 +11,9 @@ TagManager:
   - Rock
   - Sand
   - Tree
+  - Grass1
+  - Grass2
+  - Grass3
   layers:
   - Default
   - TransparentFX

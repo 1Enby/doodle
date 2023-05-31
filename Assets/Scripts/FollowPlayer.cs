@@ -6,6 +6,9 @@ public class FollowPlayer : MonoBehaviour
 {
     [SerializeField]
     GameObject player;
+    [SerializeField]
+    float y_height;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +18,6 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x, -100, player.transform.position.z);
+        transform.position = new Vector3(player.transform.position.x, y_height, player.transform.position.z);
     }
 }

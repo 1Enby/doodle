@@ -17,7 +17,7 @@ public class WorldGenerator : MonoBehaviour
     Vector3 origin;
     Vector3 ray;
 
-    [Range(0, 100)]
+    [Range(0, 1000)]
    
     [SerializeField]
     int num_lakes;
@@ -36,7 +36,6 @@ public class WorldGenerator : MonoBehaviour
 
     [SerializeField]
     int num_mountains;
-
     [Range(0, 20)]
    
     [SerializeField]
@@ -159,7 +158,35 @@ public class WorldGenerator : MonoBehaviour
                 //and the other generated properties of the tile!
                 var height = Random.Range(0.0f, 0.0f);
                 Vector3 grid_pos = new Vector3(x, height, y);
-                var rand_type = (TileType)Random.Range(0, 1); //select the tile type randomly, it's just a number between 0 and 2
+
+
+                var my_rand = Random.Range(0,100);
+                TileType rand_type = TileType.Grass;
+
+                if(my_rand<50){
+                    rand_type = TileType.Grass;
+                }
+                else if(my_rand >=50 && my_rand<65)
+                {
+                    rand_type = TileType.Grass1;
+                }
+                else if(my_rand>=65 && my_rand < 85)
+                {
+                    rand_type = TileType.Grass2;
+                }
+                 else if(my_rand>=85 && my_rand <= 95)
+                {
+                    rand_type = TileType.Grass3;
+                }
+                 else if(my_rand>=95 && my_rand <= 100)
+                {
+                    rand_type = TileType.Tree;
+                }
+
+                //var rand_type = (TileType)Random.Range(0, 4); //select the tile type randomly, it's just a number between 0 and 2
+              
+              
+              
                 var index = (tile_countY * x) + y;
 
                 StaticMap.the_world_map[index] = new map_point(rand_type, grid_pos.x, grid_pos.y, grid_pos.z);
@@ -208,7 +235,19 @@ public class WorldGenerator : MonoBehaviour
             {
                 if (n[i] != -100)
                 {
+                    StaticMap.the_world_map[n[i]].y_pos = 0.2f;
                     StaticMap.the_world_map[n[i]].t_type = TileType.Rock;
+                }
+
+            }
+
+            int[] o = StaticMap.GetNeighborsAtRadius(index, (int)mountain_size + Random.Range(1, 2), StaticMap.width, StaticMap.height);
+            for (int i = 0; i < o.Length; i++)
+            {
+                if (o[i] != -100)
+                {
+                    StaticMap.the_world_map[o[i]].y_pos = 0.4f;
+                    StaticMap.the_world_map[o[i]].t_type = TileType.Rock;
                 }
 
             }
@@ -218,7 +257,7 @@ public class WorldGenerator : MonoBehaviour
             {
                 if (n[i] != -100)
                 {
-                    StaticMap.the_world_map[n[i]].y_pos = 0.2f;
+                    StaticMap.the_world_map[n[i]].y_pos = 0.6f;
                     StaticMap.the_world_map[n[i]].t_type = TileType.Rock;
                 }
             }

@@ -4,12 +4,16 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float turnSpeed = 100f;
-    public float jumpForce = 5f;
+    public float jumpingForce = 5f;
+
+    float jumpForce = 5f;
 
     public float waterjumpForce = 1f;
 
     private Rigidbody rb;
     private bool isJumping = false;
+
+    Vector3 Playerdeath;
 
 
 
@@ -21,19 +25,15 @@ public class ThirdPersonMovement : MonoBehaviour
     private void Update()
     {
 
-        if (transform.position.y <= -10)
+        if (transform.position.y <= -5)
         {
-            transform.position = new Vector3(0, 0, 0);
+            transform.position = Playerdeath;
         }
-    
-        if (transform.position.y >= 10)
-        {
-            transform.position = new Vector3(transform.position.x, 3, transform.position.z);
-            isJumping = true;
-        }
-
-
-
+        if (transform.position.y >= 5)
+            {
+                transform.position = Playerdeath;
+                isJumping = true;
+            }
 
         // Character movement
         float moveInput = Input.GetAxis("Vertical");
@@ -54,6 +54,7 @@ public class ThirdPersonMovement : MonoBehaviour
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
             }
+            
             else
             {
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -66,18 +67,34 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            jumpForce = 5f;
+            jumpForce = jumpingForce;
+            isJumping = false;
+
+            Playerdeath = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
         }
 
         if (collision.gameObject.CompareTag("Water"))
         {
             jumpForce = waterjumpForce;
+            isJumping = false;
+
+            Playerdeath = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
         }
         else
         {
             isJumping = false;
         }
     }
+
+      private void OnCollisionExit(Collision collision)
+     {
+          if (collision.gameObject.CompareTag("Water"))
+        {
+            jumpForce = 0;
+        }
+     }
+
+    
 
 }
 

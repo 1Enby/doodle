@@ -51,8 +51,8 @@ public class WorldGenerator : MonoBehaviour
     {
         if (!GenerationComplete)
         {
-            StaticMap.Init(tile_countX, tile_countY, radius);
-            StartCoroutine("GenerateWorld");
+           StaticMap.Init(tile_countX, tile_countY, radius);
+           StartCoroutine("GenerateWorld");
         }
     }
 
@@ -158,7 +158,31 @@ public class WorldGenerator : MonoBehaviour
                 //and the other generated properties of the tile!
                 var height = Random.Range(0.0f, 0.0f);
                 Vector3 grid_pos = new Vector3(x, height, y);
-                var rand_type = (TileType)Random.Range(0, 1); //select the tile type randomly, it's just a number between 0 and 2
+
+
+                var my_rand = Random.Range(0,100);
+                TileType rand_type = TileType.Grass;
+
+                if(my_rand<50){
+                    rand_type = TileType.Grass;
+                }
+                else if(my_rand >=50 && my_rand<65)
+                {
+                    rand_type = TileType.Grass1;
+                }
+                else if(my_rand>=65 && my_rand < 85)
+                {
+                    rand_type = TileType.Grass2;
+                }
+                 else if(my_rand>=85 && my_rand <= 100)
+                {
+                    rand_type = TileType.Grass3;
+                }
+
+                //var rand_type = (TileType)Random.Range(0, 4); //select the tile type randomly, it's just a number between 0 and 2
+              
+              
+              
                 var index = (tile_countY * x) + y;
 
                 StaticMap.the_world_map[index] = new map_point(rand_type, grid_pos.x, grid_pos.y, grid_pos.z);

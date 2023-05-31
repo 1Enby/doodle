@@ -6,6 +6,9 @@ using UnityEngine;
 public enum TileType
 {
     Grass,
+    Grass1,
+    Grass2,
+    Grass3,
     Tree,
     Rock,
     Water,
@@ -52,6 +55,18 @@ public class RandomTile : MonoBehaviour
         {
             var child = transform.GetChild(0);
 
+            if (child.name.Contains("Grass1"))
+            {
+                object_pool = GameObject.Find("ObjectPools").transform.Find("GrassTiles1");
+            }  
+            if (child.name.Contains("Grass2"))
+            {
+                object_pool = GameObject.Find("ObjectPools").transform.Find("GrassTiles2");
+            }    
+            if (child.name.Contains("Grass3"))
+            {
+                object_pool = GameObject.Find("ObjectPools").transform.Find("GrassTiles3");
+            }     
             if (child.name.Contains("Tree"))
             {
                 object_pool = GameObject.Find("ObjectPools").transform.Find("TreeTiles");
@@ -97,6 +112,15 @@ public class RandomTile : MonoBehaviour
         {
             case TileType.Grass:
                 object_pool = GameObject.Find("ObjectPools").transform.Find("GrassTiles");
+                break;
+            case TileType.Grass1:
+                object_pool = GameObject.Find("ObjectPools").transform.Find("GrassTiles1");
+                break;
+            case TileType.Grass2:
+                object_pool = GameObject.Find("ObjectPools").transform.Find("GrassTiles2");
+                break;
+            case TileType.Grass3:
+                object_pool = GameObject.Find("ObjectPools").transform.Find("GrassTiles3");
                 break;
             case TileType.Rock:
                 object_pool = GameObject.Find("ObjectPools").transform.Find("RockTiles");

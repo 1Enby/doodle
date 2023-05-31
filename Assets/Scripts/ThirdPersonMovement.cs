@@ -15,6 +15,12 @@ public class ThirdPersonMovement : MonoBehaviour
 
     Vector3 Playerdeath;
 
+    float PlayerFlyX;
+    float PlayerFlyY;
+    float PlayerFlyZ;
+
+    float Fly = 1;
+
 
 
     private void Start()
@@ -26,10 +32,10 @@ public class ThirdPersonMovement : MonoBehaviour
     {
 
         if (transform.position.y <= -5)
-        {
-            transform.position = Playerdeath;
-        }
-        if (transform.position.y >= 5)
+            {
+                transform.position = Playerdeath;
+            }
+        if (PlayerFlyY + 2 < transform.position.y)
             {
                 transform.position = Playerdeath;
                 isJumping = true;
@@ -71,6 +77,8 @@ public class ThirdPersonMovement : MonoBehaviour
             isJumping = false;
 
             Playerdeath = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+
+            Fly = 1;
         }
 
         if (collision.gameObject.CompareTag("Water"))
@@ -79,10 +87,16 @@ public class ThirdPersonMovement : MonoBehaviour
             isJumping = false;
 
             Playerdeath = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+
+            PlayerFlyX = transform.position.x;
+            PlayerFlyY = transform.position.y;
+            PlayerFlyZ = transform.position.z;
         }
         else
         {
             isJumping = false;
+
+            Fly = 1;
         }
     }
 

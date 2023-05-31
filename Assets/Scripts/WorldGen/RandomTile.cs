@@ -55,42 +55,48 @@ public class RandomTile : MonoBehaviour
         {
             var child = transform.GetChild(0);
 
-            if (child.name.Contains("Grass1"))
+            if (child.CompareTag("Grass1"))
             {
                 object_pool = GameObject.Find("ObjectPools").transform.Find("GrassTiles1");
+                
             }  
-            if (child.name.Contains("Grass2"))
+            if (child.CompareTag("Grass2"))
             {
                 object_pool = GameObject.Find("ObjectPools").transform.Find("GrassTiles2");
+                
             }    
-            if (child.name.Contains("Grass3"))
+            if (child.CompareTag("Grass3"))
             {
                 object_pool = GameObject.Find("ObjectPools").transform.Find("GrassTiles3");
+                
             }     
-            if (child.name.Contains("Tree"))
+            if (child.CompareTag("Tree"))
             {
                 object_pool = GameObject.Find("ObjectPools").transform.Find("TreeTiles");
+                
 
             }
-            if (child.name.Contains("Rock"))
+            if (child.CompareTag("Rock"))
             {
                 object_pool = GameObject.Find("ObjectPools").transform.Find("RockTiles");
+                
 
             }
-            if (child.name.Contains("Grass"))
+            if (child.CompareTag("Grass"))
             {
                 object_pool = GameObject.Find("ObjectPools").transform.Find("GrassTiles");
-
+                
             }
-            if (child.name.Contains("Water"))
+            if (child.CompareTag("Water"))
             {
                 object_pool = GameObject.Find("ObjectPools").transform.Find("WaterTiles");
-
+                
             }
 
-            if (child.name.Contains("Sand"))
+            if (child.CompareTag("Sand"))
             {
                 object_pool = GameObject.Find("ObjectPools").transform.Find("SandTiles");
+                
             }
             child.SetParent(object_pool, false);
             //child.localPosition = new Vector3(0, 0, 0);

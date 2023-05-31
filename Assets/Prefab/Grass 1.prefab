@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1376201918766397611}
   m_Layer: 0
   m_Name: Grass 1
-  m_TagString: Grass
+  m_TagString: Grass1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,6 +108,11 @@ PrefabInstance:
     - target: {fileID: 5118467155372380828, guid: b53fc9b96d9c743708a1dc6fe31181cd,
         type: 3}
       propertyPath: m_Name
+      value: Grass1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5118467155372380828, guid: b53fc9b96d9c743708a1dc6fe31181cd,
+        type: 3}
+      propertyPath: m_TagString
       value: Grass1
       objectReference: {fileID: 0}
     - target: {fileID: 5495414567222233126, guid: b53fc9b96d9c743708a1dc6fe31181cd,

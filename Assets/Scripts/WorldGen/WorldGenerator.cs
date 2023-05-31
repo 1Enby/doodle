@@ -17,7 +17,7 @@ public class WorldGenerator : MonoBehaviour
     Vector3 origin;
     Vector3 ray;
 
-    [Range(0, 100)]
+    [Range(0, 1000)]
    
     [SerializeField]
     int num_lakes;
@@ -174,9 +174,13 @@ public class WorldGenerator : MonoBehaviour
                 {
                     rand_type = TileType.Grass2;
                 }
-                 else if(my_rand>=85 && my_rand <= 100)
+                 else if(my_rand>=85 && my_rand <= 95)
                 {
                     rand_type = TileType.Grass3;
+                }
+                 else if(my_rand>=95 && my_rand <= 100)
+                {
+                    rand_type = TileType.Tree;
                 }
 
                 //var rand_type = (TileType)Random.Range(0, 4); //select the tile type randomly, it's just a number between 0 and 2

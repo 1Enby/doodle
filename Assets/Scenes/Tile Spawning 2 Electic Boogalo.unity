@@ -3700,7 +3700,7 @@ MonoBehaviour:
   player: {fileID: 162126404}
   tile_countX: 500
   tile_countY: 500
-  num_lakes: 74
+  num_lakes: 1000
   min_lake_radius: 1
   max_lake_radius: 10
   radius: 6
@@ -3852,6 +3852,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 162126409, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
       propertyPath: jumpForce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 162126409, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
+      propertyPath: jumpingForce
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 162126409, guid: 8041113e72d91402abc1b1da11035a94, type: 3}

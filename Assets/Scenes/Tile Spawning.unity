@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06788191, g: 0.10543225, b: 0.11922799, a: 1}
+  m_IndirectSpecularColor: {r: 0.07487889, g: 0.13948134, b: 0.25017208, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3363,7 +3363,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &549381026
 PrefabInstance:
@@ -3609,7 +3609,7 @@ RectTransform:
   m_Children:
   - {fileID: 1945598892}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3991,6 +3991,38 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 669051490}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &690842885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 690842886}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &690842886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690842885}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1666855229}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &746235995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5276,6 +5308,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 924919612}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &925456287 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056789236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &930648016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6228,7 +6266,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1032349940
 GameObject:
@@ -6368,15 +6406,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.5
+      value: 0.764151
       objectReference: {fileID: 0}
     - target: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.49587265
+      value: 0.6740388
       objectReference: {fileID: 0}
     - target: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.49292454
+      value: 0.6740388
       objectReference: {fileID: 0}
     - target: {fileID: 8916419375935999045, guid: 8041113e72d91402abc1b1da11035a94,
         type: 3}
@@ -11293,14 +11331,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666855227}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50, y: 50, z: 50}
+  m_LocalRotation: {x: 0.40821788, y: 0.23456976, z: -0.10938167, w: 0.8754261}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 690842886}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 50, y: 30, z: 0}
 --- !u!114 &1666855230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11313,7 +11351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd90dd00f6c346dc9d70ad087edc440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degpersec: 6
+  degpersec: 0.5
+  cam: {fileID: 925456287}
 --- !u!114 &1666855231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12169,7 +12208,7 @@ Transform:
   - {fileID: 453204128}
   - {fileID: 1341016596}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1754653333
 PrefabInstance:

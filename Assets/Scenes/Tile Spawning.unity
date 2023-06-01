@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06788191, g: 0.10543225, b: 0.11922799, a: 1}
+  m_IndirectSpecularColor: {r: 0.06788187, g: 0.105432235, b: 0.11922799, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6358,6 +6358,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 162126409, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
+      propertyPath: jumpingForce
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 162126409, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
       propertyPath: waterjumpForce
       value: 2

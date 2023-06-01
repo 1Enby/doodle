@@ -16,7 +16,6 @@ public class ThirdPersonMovement : MonoBehaviour
 
     Vector3 Playerdeath;
 
-
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -69,8 +68,14 @@ public class ThirdPersonMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+
+    }
+
     void OnTriggerEnter(Collider col)
     {
+        Debug.Log("Trigger Enter");
         if (col.CompareTag("Water"))
         {
             water_colliders.Add(col);
@@ -82,6 +87,7 @@ public class ThirdPersonMovement : MonoBehaviour
     void OnTriggerExit(Collider col)
     {
         foreach (Collider wc in water_colliders)
+            Debug.Log(wc.gameObject.name);
 
         if (col.gameObject.CompareTag("Water"))
         {

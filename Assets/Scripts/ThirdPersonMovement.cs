@@ -35,7 +35,7 @@ public class ThirdPersonMovement : MonoBehaviour
             {
                 transform.position = Playerdeath;
             }
-        if (PlayerFlyY + 2 < transform.position.y)
+        if (PlayerFlyY + 4 < transform.position.y)
             {
                 transform.position = Playerdeath;
                 isJumping = true;

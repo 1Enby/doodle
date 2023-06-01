@@ -12,7 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tile Spawning.unity
     guid: 7b3f9e810a0aa4436ba61b40567e1733
   m_configObjects:
-    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 1a4bb1c13b06c394495d857ce9d9a378,
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 00395439abc0f44caa57bdb9ba90a972,
       type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 5eb534e1229f89849b949181a2f0676b, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: ecd375854e0212245ba55e9944c79873, type: 2}

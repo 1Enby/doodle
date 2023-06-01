@@ -3806,9 +3806,9 @@ MonoBehaviour:
   min_lake_radius: 1
   max_lake_radius: 10
   radius: 6
-  num_mountains: 0
+  num_mountains: 100
   min_mountain_radius: 0
-  max_mountain_radius: 0
+  max_mountain_radius: 20
 --- !u!4 &1026105732
 Transform:
   m_ObjectHideFlags: 0

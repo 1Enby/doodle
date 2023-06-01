@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
@@ -14,33 +15,22 @@ public class ThirdPersonMovement : MonoBehaviour
     private bool isJumping = false;
 
     Vector3 Playerdeath;
-    Vector3 Flying;
-
-   
-    float PlayerFlyY;
-    
-
-    
-
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        water_colliders = new List<Collider>();
     }
 
     private void Update()
     {
 
+        //move the player back to the map if they fall off.
         if (transform.position.y <= -5)
-            {
-                transform.position = Playerdeath;
-            }
-        if (PlayerFlyY + 4 < transform.position.y)
-            {
-                transform.position = Flying;
-                isJumping = true;
-            }
+        {
+            transform.position = Playerdeath;
+        }
 
         // Character movement
         float moveInput = Input.GetAxis("Vertical");
@@ -53,52 +43,59 @@ public class ThirdPersonMovement : MonoBehaviour
         rb.MoveRotation(rb.rotation * turnRotation);
 
         // Character jumping
-
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
-            if (jumpForce == waterjumpForce)
-            {
-                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
-            }
-            
-            else
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+            //if we are in water, don't set "isJumping" because we are allowed to jump a lot e.g. swimming
+            bool inWater = (jumpForce == waterjumpForce);
+
+            if (!inWater)
             {
-                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 isJumping = true;
             }
         }
     }
 
+    List<Collider> water_colliders;
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (!collision.gameObject.CompareTag("Water"))
         {
             jumpForce = jumpingForce;
             isJumping = false;
-
-            Playerdeath = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
-
-            PlayerFlyY = 100;
-        }
-
-        if (collision.gameObject.CompareTag("Water"))
-        {
-            jumpForce = waterjumpForce;
-            isJumping = false;
-            Flying = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
-            Playerdeath = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
-            PlayerFlyY = transform.position.y;
-
-        }
-        else
-        {
-            isJumping = false;
-            PlayerFlyY = 100;
+            Playerdeath = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
     }
 
-    
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Water"))
+        {
+            water_colliders.Add(col);
+            jumpForce = waterjumpForce;
+        }
+        isJumping = false;
+
+    }
+    void OnTriggerExit(Collider col)
+    {
+        foreach (Collider wc in water_colliders)
+
+        if (col.gameObject.CompareTag("Water"))
+        {
+            Playerdeath = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            water_colliders.Remove(col);
+        }
+        if (water_colliders.Count <= 0)
+        {
+            jumpForce = jumpingForce;
+        }
+
+    }
+
+
 
 }
 

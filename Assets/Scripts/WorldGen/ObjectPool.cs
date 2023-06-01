@@ -28,7 +28,11 @@ public class ObjectPool : MonoBehaviour
     {
         if (transform.childCount < 1 && count < limit)
         {
+#if UNITY_EDITOR
             tmp = PrefabUtility.InstantiatePrefab(prefab, transform) as GameObject;
+#else
+            tmp = Instantiate(prefab,transform);
+#endif
             count++;
         }
     }

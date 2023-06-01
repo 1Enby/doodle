@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.09
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -6358,6 +6358,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 162126409, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
+      propertyPath: waterjumpForce
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.49587265
+      objectReference: {fileID: 0}
+    - target: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.49292454
+      objectReference: {fileID: 0}
     - target: {fileID: 8916419375935999045, guid: 8041113e72d91402abc1b1da11035a94,
         type: 3}
       propertyPath: m_RootOrder
@@ -9588,7 +9608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1411220053
 Transform:
   m_ObjectHideFlags: 0
@@ -9667,7 +9687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 162126404}
-  y_height: 0
+  y_height: -2
 --- !u!1001 &1424124062
 PrefabInstance:
   m_ObjectHideFlags: 0

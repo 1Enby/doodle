@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07487889, g: 0.13948134, b: 0.25017208, a: 1}
+  m_IndirectSpecularColor: {r: 0.07663103, g: 0.14208025, b: 0.25236142, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4248,6 +4248,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 766296049}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &786574962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 786574964}
+  - component: {fileID: 786574963}
+  m_Layer: 0
+  m_Name: Audio Loudness Detection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &786574963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786574962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d1ddc732b27ee4c8820568fab753b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sampleWindow: 64
+--- !u!4 &786574964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786574962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 72.63985, y: -31.249115, z: -5.7038183}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &793412811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6396,26 +6441,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 162126409, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
-      propertyPath: waterjumpForce
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.764151
-      objectReference: {fileID: 0}
-    - target: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.6740388
-      objectReference: {fileID: 0}
-    - target: {fileID: 737668829, guid: 8041113e72d91402abc1b1da11035a94, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.6740388
-      objectReference: {fileID: 0}
+    - target: {fileID: 2472440894586473327, guid: 8041113e72d91402abc1b1da11035a94,
+        type: 3}
+      propertyPath: detector
+      value: 
+      objectReference: {fileID: 786574963}
     - target: {fileID: 8916419375935999045, guid: 8041113e72d91402abc1b1da11035a94,
         type: 3}
       propertyPath: m_RootOrder
@@ -11255,6 +11285,7 @@ GameObject:
   - component: {fileID: 1666855228}
   - component: {fileID: 1666855230}
   - component: {fileID: 1666855231}
+  - component: {fileID: 1666855232}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -11351,7 +11382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd90dd00f6c346dc9d70ad087edc440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degpersec: 0.5
   cam: {fileID: 925456287}
 --- !u!114 &1666855231
 MonoBehaviour:
@@ -11373,6 +11403,27 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!95 &1666855232
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666855227}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2d66637544fa41f5b120c488580c3ed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1670619293
 PrefabInstance:
   m_ObjectHideFlags: 0

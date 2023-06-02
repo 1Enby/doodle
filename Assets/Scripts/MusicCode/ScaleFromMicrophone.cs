@@ -8,6 +8,8 @@ public class ScaleFromMicrophone : MonoBehaviour
     public Vector3 minScale;
     public Vector3 maxScale;
     public AudioLoudnessDetection detector;
+
+    public float loudness;
     
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,7 @@ public class ScaleFromMicrophone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float loudness = detector.GetLoudnessFromMicrophone();
-        transform.localScale = Vector3.Lerp(minScale, maxScale,loudness);
+         loudness = detector.GetLoudnessFromMicrophone();
+        Debug.Log(loudness);
     }
 }

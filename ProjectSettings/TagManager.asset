@@ -14,6 +14,7 @@ TagManager:
   - Grass1
   - Grass2
   - Grass3
+  - TreeTrunk
   layers:
   - Default
   - TransparentFX

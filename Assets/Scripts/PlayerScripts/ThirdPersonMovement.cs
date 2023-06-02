@@ -66,6 +66,10 @@ public class ThirdPersonMovement : MonoBehaviour
             isJumping = false;
             Playerdeath = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
+        if (collision.gameObject.CompareTag("TeeeTrunk"))
+        {
+            isJumping = true;
+        }
     }
 
     private void OnCollisionExit(Collision collision)

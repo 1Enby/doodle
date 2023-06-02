@@ -21,6 +21,6 @@ public class ScaleFromMicrophone : MonoBehaviour
     void Update()
     {
          loudness = detector.GetLoudnessFromMicrophone();
-        Debug.Log(loudness);
+        //Debug.Log(loudness);
     }
 }

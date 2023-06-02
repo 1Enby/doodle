@@ -35,6 +35,7 @@ public class ThirdPersonMovement : MonoBehaviour
         float moveInput = Input.GetAxis("Vertical");
         float turnInput = Input.GetAxis("Horizontal");
 
+        GetComponent<Animator>().SetInteger("speed",(int)moveInput);
         Vector3 movement = transform.forward * moveInput * moveSpeed * Time.deltaTime;
         Quaternion turnRotation = Quaternion.Euler(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
 

@@ -45,8 +45,8 @@ public class ThirdPersonMovement : MonoBehaviour
         // Character jumping
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
-
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        GetComponent<Animator>().SetTrigger("Jump");
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
             //if we are in water, don't set "isJumping" because we are allowed to jump a lot e.g. swimming
             bool inWater = (jumpForce == waterjumpForce);

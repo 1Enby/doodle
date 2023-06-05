@@ -35,7 +35,7 @@ public class ThirdPersonMovement : MonoBehaviour
         float moveInput = Input.GetAxis("Vertical");
         float turnInput = Input.GetAxis("Horizontal");
 
-        GetComponent<Animator>().SetInteger("speed",(int)moveInput);
+        // GetComponent<Animator>().SetInteger("speed",(int)moveInput);
         Vector3 movement = transform.forward * moveInput * moveSpeed * Time.deltaTime;
         Quaternion turnRotation = Quaternion.Euler(Vector3.up * turnInput * turnSpeed * Time.deltaTime);
 
@@ -45,7 +45,7 @@ public class ThirdPersonMovement : MonoBehaviour
         // Character jumping
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
-        GetComponent<Animator>().SetTrigger("Jump");
+        // GetComponent<Animator>().SetTrigger("Jump");
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
             //if we are in water, don't set "isJumping" because we are allowed to jump a lot e.g. swimming

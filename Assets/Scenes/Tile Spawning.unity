@@ -11219,7 +11219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2952e89ce2140b886251b56cf02c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 8916419375849676477}
   tile_countX: 500
   tile_countY: 500
   num_lakes: 74
